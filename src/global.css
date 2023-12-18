@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-dark-1 text-white min-h-screen font-inter;
+    @apply  text-white min-h-screen ;
   }
 }
 
@@ -157,7 +157,7 @@
   }
 
   .post_details-img {
-    @apply h-80 lg:h-[480px] xl:w-[48%] rounded-t-[30px] xl:rounded-l-[24px] xl:rounded-tr-none object-cover p-5 bg-dark-1;
+    @apply h-80 lg:h-[480px] xl:w-[48%] rounded-t-[30px] xl:rounded-l-[24px] xl:rounded-tr-none object-cover p-5 ;
   }
 
   .post_details-info {
@@ -277,4 +277,11 @@
   .shad-button_ghost {
     @apply flex gap-4 items-center justify-start hover:bg-transparent hover:text-white !important;
   }
+/*
+  .bg-dark-1 {
+    @apply #09090a;
+  }
+  .font-inter {
+    @apply #09090a;
+  }*/
 }
