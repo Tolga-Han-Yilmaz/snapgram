@@ -64,4 +64,34 @@ export default {
 15 - npx shadcn-ui@latest init   
 16 - (y yes default slate src/global.css yes enter enter enter yes y)
 17 - npx shadcn-ui@latest add button (components\ui button.tsx olustu)
-
+18 - npx shadcn-ui@latest add form (form olusturulmak icin kullandi) (components/ui form.tsx label.tsx olustu)
+19 - SignupForm.tsx ("use client"
+      import * as z from "zod"
+      const formSchema = z.object({
+        username: z.string().min(2).max(50),
+      })
+      )
+20 - SignupForm.tsx (import {
+      Form,
+      FormControl,
+      FormDescription,
+      FormField,
+      FormItem,
+      FormLabel,
+      FormMessage,
+    } from "@/components/ui/form"
+    // 1. Define your form.
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: "",
+    },
+  })
+ 
+  // 2. Define a submit handler.
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    // Do something with the form values.
+    // ✅ This will be type-safe and validated.
+    console.log(values)
+  })
+21 - npx shadcn-ui@latest add input
