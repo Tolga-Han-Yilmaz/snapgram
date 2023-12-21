@@ -95,3 +95,7 @@ export default {
     console.log(values)
   })
 21 - npx shadcn-ui@latest add input
+22 - appwrite'da uygulama olusturuldu. lib appwrite config.ts olusturuldu.
+23 - npm install appwrite
+24 - lib appwrite app.ts olusturuldu.
+25 - types index.ts olusturuldu.
