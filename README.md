@@ -99,3 +99,7 @@ export default {
 23 - npm install appwrite
 24 - lib appwrite app.ts olusturuldu.
 25 - types index.ts olusturuldu.
+26 - appwrite storage create bucket 'media' olusturuldu.
+27 - apppwrite databases createcollection -- db olusturuldu.
+
+
