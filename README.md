@@ -95,11 +95,18 @@ export default {
     console.log(values)
   })
 21 - npx shadcn-ui@latest add input
-22 - appwrite'da uygulama olusturuldu. lib appwrite config.ts olusturuldu.
+22 - appwrite'da uygulama olusturuldu. lib appwrite config.ts         olusturuldu.
 23 - npm install appwrite
 24 - lib appwrite app.ts olusturuldu.
 25 - types index.ts olusturuldu.
 26 - appwrite storage create bucket 'media' olusturuldu.
 27 - apppwrite databases createcollection -- db olusturuldu.
-
-
+28 - appwrite databases createcollection 'posts', 'Saves' ve 'users' olusturuldu
+29 - appwrite databases setting permissions 'create read update delete' secildi.
+30 - appwrite databases posts attributes createattribute --> Relationship --> two way relationship --> related collection users --> attribute key creator --> relation many to one --> on deleteing a document Set NULL  ----> Kimin gonderdigini gormek icin
+31 - appwrite databases posts attributes createattribute --> Relationship --> two way relationship --> related collection: users --> attribute key: likes --> attribute key(r.c.): liked --> relation: many to many --> on deleteing a document Set NULL  ----> Postlari begenmek
+31 - appwrite databases posts attributes createattribute --> String --> Attribute key: caption --> size: 2200
+32 - appwrite databases posts attributes createattribute --> String --> Attribute key: tags --> size: 2200 --> array sec
+33 - appwrite databases posts attributes createattribute --> URL --> Attribute key: imageUrl --> required sec
+34 - appwrite databases posts attributes createattribute --> String --> Attribute key: imageId --> size: 2200 --> required sec
+35 - appwrite databases posts attributes createattribute --> String --> Attribute key: location --> size: 2200 
