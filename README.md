@@ -110,3 +110,32 @@ export default {
 33 - appwrite databases posts attributes createattribute --> URL --> Attribute key: imageUrl --> required sec
 34 - appwrite databases posts attributes createattribute --> String --> Attribute key: imageId --> size: 2200 --> required sec
 35 - appwrite databases posts attributes createattribute --> String --> Attribute key: location --> size: 2200 
+36 - appwrite databases posts indexes createindex --> index key: caption --> index type: fulltext --> attribute: caption --> order: desc
+37 - appwrite databases users attributes createattribute --> String --> Attribute key: name --> size: 2200 
+38 - appwrite databases users attributes createattribute --> String --> Attribute key: username --> size: 2200 
+39 - appwrite databases users attributes createattribute --> String --> Attribute key: accountId --> size: 2200 --> --> required sec
+40 - appwrite databases users attributes createattribute --> email --> Attribute key: email
+41 - appwrite databases users attributes createattribute --> String --> Attribute key: bio --> size: 2200 
+42 - appwrite databases users attributes createattribute --> String --> Attribute key: imageId --> size: 2200 
+43 - appwrite databases users attributes createattribute --> url --> Attribute key: imageUrl --> required
+44 - appwrite databases saves attributes createattribute --> Relationship --> two way relationship --> related collection: users --> attribute key: user --> attribute key(r.c.): save --> relation: many to one --> on deleteing a document Set NULL  
+45 - appwrite databases saves attributes createattribute --> Relationship --> two way relationship --> related collection: posts --> attribute key: post --> attribute key(r.c.): save --> relation: many to one --> on deleteing a document Set NULL 
+46 - config.ts'de .env'deki sifreler import edildi
+47 - api.ts
+48 - https://ui.shadcn.com/docs/components/toast  --> npx shadcn-ui@latest add toast --> components ui toast.tsx, toaster.tsx, use-toasts.tsx dosyalari olustu.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
