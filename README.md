@@ -123,6 +123,9 @@ export default {
 46 - config.ts'de .env'deki sifreler import edildi
 47 - api.ts
 48 - https://ui.shadcn.com/docs/components/toast  --> npx shadcn-ui@latest add toast --> components ui toast.tsx, toaster.tsx, use-toasts.tsx dosyalari olustu.
+49 - https://tanstack.com/query/latest
+50 - lib react-query queriesAndMutations.ts olusturuldu
+51 - npm i @tanstack/react-query
 
 
 
