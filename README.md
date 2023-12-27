@@ -126,6 +126,7 @@ export default {
 49 - https://tanstack.com/query/latest
 50 - lib react-query queriesAndMutations.ts olusturuldu
 51 - npm i @tanstack/react-query
+52 - lib react-query QueryProvider.tsx olusturuldu.
 
 
 
