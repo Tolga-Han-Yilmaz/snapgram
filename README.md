@@ -128,6 +128,7 @@ export default {
 51 - npm i @tanstack/react-query
 52 - lib react-query QueryProvider.tsx olusturuldu.
 53 - components shared Topbar.tsx, bottombar.tsx ve leftsidebar.tsx olusturuldu.
+54 -
 
 
 
