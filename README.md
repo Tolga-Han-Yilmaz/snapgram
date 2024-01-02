@@ -133,6 +133,9 @@ console.log(values)
 55 - pages allusers.tsx olusturuldu.
 56 - components forms PostForm.tsx olusturuldu. Icerigi https://ui.shadcn.com/docs/components/form buradan olusturuldu.
 57 - components shared fileuploader.tsx olusturuldu.
+58 - npm install react-dropzone
+59 - fileuploader.jsx dosyasinin icerisine 'https://react-dropzone.js.org/' buradaki icerikler yerlestirildi.
+60 - appwrite storage settings permissions any "create read update delete" izin verildi.
 
 
 
