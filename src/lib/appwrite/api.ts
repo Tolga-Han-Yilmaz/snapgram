@@ -1,8 +1,8 @@
-import { INewUser } from "@/types";
+import { INewPost, INewUser } from "@/types";
 import { ID, Query } from "appwrite";
 import { account, appwriteConfig, avatars, databases } from "./config";
 
-export async function createUserAccount(user:INewUser) {
+export async function createUserAccount(user: INewUser) {
     try {
         const newAccount = await account.create(
             ID.unique(),
@@ -11,7 +11,7 @@ export async function createUserAccount(user:INewUser) {
             user.name
         );
 
-        if(!newAccount) throw Error;
+        if (!newAccount) throw Error;
 
         const avatarUrl = avatars.getInitials(user.name);
 
@@ -21,7 +21,7 @@ export async function createUserAccount(user:INewUser) {
             email: newAccount.email,
             username: user.username,
             imageUrl: avatarUrl,
-          });
+        });
 
         return newUser;
     } catch (error) {
@@ -36,7 +36,7 @@ export async function saveUserToDB(user: {
     name: string;
     imageUrl: URL;
     username?: string;
-}){
+}) {
     try {
         const newUser = await databases.createDocument(
             appwriteConfig.databaseId,
@@ -51,7 +51,7 @@ export async function saveUserToDB(user: {
     }
 }
 
-export async function signInAccount(user: { email: string; password: string;}){
+export async function signInAccount(user: { email: string; password: string; }) {
     try {
         const session = await account.createEmailSession(user.email, user.password);
         return session;
@@ -62,20 +62,20 @@ export async function signInAccount(user: { email: string; password: string;}){
 
 export async function getCurrentUser() {
     try {
-      const currentAccount = await account.get();
+        const currentAccount = await account.get();
 
-      if(!currentAccount) throw Error;
+        if (!currentAccount) throw Error;
 
-      const currentUser = await databases.listDocuments(
-        appwriteConfig.databaseId,
-        appwriteConfig.userCollectionId,
-        [Query.equal('accountId', currentAccount.$id)]
+        const currentUser = await databases.listDocuments(
+            appwriteConfig.databaseId,
+            appwriteConfig.userCollectionId,
+            [Query.equal('accountId', currentAccount.$id)]
         )
 
-        if(!currentUser) throw Error;
+        if (!currentUser) throw Error;
 
         return currentUser.documents[0];
-      
+
     } catch (error) {
         console.log(error)
     }
@@ -90,3 +90,36 @@ export async function signOutAccount() {
         console.log(error)
     }
 }
+
+export async function createPost(post: INewPost) {
+    try {
+      // Upload file to appwrite storage
+      
+  
+      // Convert tags into array
+      const tags = post.tags?.replace(/ /g, "").split(",") || [];
+  
+      // Create post
+      const newPost = await databases.createDocument(
+        appwriteConfig.databaseId,
+        appwriteConfig.postCollectionId,
+        ID.unique(),
+        {
+          creator: post.userId,
+          caption: post.caption,
+          
+          location: post.location,
+          tags: tags,
+        }
+      );
+  
+      if (!newPost) {
+       
+        throw Error;
+      }
+  
+      return newPost;
+    } catch (error) {
+      console.log(error);
+    }
+  }
